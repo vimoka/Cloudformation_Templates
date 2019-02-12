@@ -1,0 +1,40 @@
+{
+	"name": "SourceDataset_9lb",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureBlobStorage2",
+			"type": "LinkedServiceReference"
+		},
+		"type": "AzureBlob",
+		"structure": [
+			{
+				"name": "Player",
+				"type": "String"
+			},
+			{
+				"name": "Time",
+				"type": "String"
+			},
+			{
+				"name": "Points",
+				"type": "String"
+			}
+		],
+		"typeProperties": {
+			"format": {
+				"type": "TextFormat",
+				"columnDelimiter": ",",
+				"rowDelimiter": "",
+				"quoteChar": "\"",
+				"nullValue": "\\N",
+				"encodingName": null,
+				"treatEmptyAsNull": true,
+				"skipLineCount": 0,
+				"firstRowAsHeader": true
+			},
+			"fileName": "",
+			"folderPath": "gamedata"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

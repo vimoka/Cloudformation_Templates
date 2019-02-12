@@ -1,0 +1,36 @@
+{
+	"name": "SourceDataset_01a",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureBlobStorage1",
+			"type": "LinkedServiceReference"
+		},
+		"type": "AzureBlob",
+		"structure": [
+			{
+				"name": "tdate",
+				"type": "String"
+			},
+			{
+				"name": "amount",
+				"type": "String"
+			}
+		],
+		"typeProperties": {
+			"format": {
+				"type": "TextFormat",
+				"columnDelimiter": ",",
+				"rowDelimiter": "",
+				"quoteChar": "\"",
+				"nullValue": "\\N",
+				"encodingName": null,
+				"treatEmptyAsNull": true,
+				"skipLineCount": 0,
+				"firstRowAsHeader": true
+			},
+			"fileName": "",
+			"folderPath": "transactionslab"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

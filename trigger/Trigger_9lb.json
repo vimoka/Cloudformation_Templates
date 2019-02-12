@@ -1,0 +1,26 @@
+{
+	"name": "Trigger_9lb",
+	"properties": {
+		"runtimeState": "Started",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "Copygamedata",
+					"type": "PipelineReference"
+				},
+				"parameters": {
+					"windowStart": "@trigger().scheduledTime"
+				}
+			}
+		],
+		"type": "ScheduleTrigger",
+		"typeProperties": {
+			"recurrence": {
+				"frequency": "Minute",
+				"interval": 1,
+				"startTime": "2016-01-01T23:05:00Z",
+				"timeZone": "UTC"
+			}
+		}
+	}
+}

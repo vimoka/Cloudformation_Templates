@@ -1,0 +1,24 @@
+{
+	"name": "DestinationDataset_ckv",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase1",
+			"type": "LinkedServiceReference"
+		},
+		"type": "AzureSqlTable",
+		"structure": [
+			{
+				"name": "tdate",
+				"type": "DateTime"
+			},
+			{
+				"name": "amount",
+				"type": "Decimal"
+			}
+		],
+		"typeProperties": {
+			"tableName": "[dbo].[transact]"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

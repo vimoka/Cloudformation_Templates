@@ -1,0 +1,59 @@
+{
+	"name": "mypracticecopypipeline",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy_01a",
+				"type": "Copy",
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [
+					{
+						"name": "Source",
+						"value": "transactionslab/"
+					},
+					{
+						"name": "Destination",
+						"value": "[dbo].[transactions]"
+					}
+				],
+				"typeProperties": {
+					"source": {
+						"type": "BlobSource",
+						"recursive": false
+					},
+					"sink": {
+						"type": "SqlSink",
+						"writeBatchSize": 10000
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"columnMappings": {
+							"tdate": "tdate",
+							"amount": "amount"
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "SourceDataset_01a",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "DestinationDataset_01a",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}
