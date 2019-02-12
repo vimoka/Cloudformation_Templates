@@ -2,17 +2,6 @@
 	"name": "Trigger_9lb",
 	"properties": {
 		"runtimeState": "Started",
-		"pipelines": [
-			{
-				"pipelineReference": {
-					"referenceName": "Copygamedata",
-					"type": "PipelineReference"
-				},
-				"parameters": {
-					"windowStart": "@trigger().scheduledTime"
-				}
-			}
-		],
 		"type": "ScheduleTrigger",
 		"typeProperties": {
 			"recurrence": {
