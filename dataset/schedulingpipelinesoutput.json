@@ -1,0 +1,27 @@
+{
+	"name": "schedulingpipelinesoutput",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase1",
+			"type": "LinkedServiceReference"
+		},
+		"type": "AzureSqlTable",
+		"structure": [
+			{
+				"name": "tdate",
+				"type": "DateTime"
+			},
+			{
+				"name": "amount",
+				"type": "Decimal"
+			}
+		],
+		"typeProperties": {
+			"tableName": "dbo.points"
+		},
+		"availability": {
+			"frequency": "Day",
+			"interval": 1
+		}
+	}
+}
